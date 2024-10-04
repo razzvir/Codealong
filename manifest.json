@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "CodeAlong Auto Pause/Play",
+    "version": "1.0",
+    "description": "Automatically pauses and plays YouTube videos when switching between VS Code and YouTube.",
+    "permissions": [
+      "tabs",
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+        "16": "clapperboard.png",
+        "48": "pause.png",
+        "128": "play-button.png"
+      }
+  }
+  
